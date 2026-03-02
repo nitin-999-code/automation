@@ -1,0 +1,13 @@
+{
+    "name": "streak-automation",
+    "version": "1.0.0",
+    "description": "Automatically maintain a GitHub contribution streak using GitHub REST API",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "dependencies": {
+        "axios": "^1.6.8",
+        "dotenv": "^16.4.5"
+    }
+}
