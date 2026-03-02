@@ -1,0 +1,38 @@
+name: Daily Streak Automation
+
+on:
+  schedule:
+    # Runs at 12:30 UTC daily, which corresponds to 6:00 PM IST
+    - cron: '30 12 * * *'
+  # Allows triggering the workflow manually via the Actions tab
+  workflow_dispatch:
+
+jobs:
+  run-streak:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up the correct Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # Step 3: Install project dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Run the script and inject secrets as environment variables
+      - name: Run Streak Script
+        run: npm start
+        env:
+          # Note: If GitHub restricts naming custom secrets with the "GITHUB_" prefix,
+          # you can rename the secret to "PAT_TOKEN" or similar and update it here:
+          # GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_OWNER: ${{ secrets.GITHUB_OWNER }}
+          GITHUB_REPO: ${{ secrets.GITHUB_REPO }}
