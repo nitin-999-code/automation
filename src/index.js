@@ -3,9 +3,9 @@ const axios = require('axios');
 
 // Configuration
 const config = {
-    token: process.env.GITHUB_TOKEN,
-    owner: process.env.GITHUB_OWNER,
-    repo: process.env.GITHUB_REPO,
+    token: process.env.PAT_TOKEN,
+    owner: process.env.GH_OWNER,
+    repo: process.env.GH_REPO,
     filePath: 'data/log.txt'
 };
 
@@ -14,9 +14,9 @@ const config = {
  */
 function validateConfig() {
     const missing = [];
-    if (!config.token) missing.push('GITHUB_TOKEN');
-    if (!config.owner) missing.push('GITHUB_OWNER');
-    if (!config.repo) missing.push('GITHUB_REPO');
+    if (!config.token) missing.push('PAT_TOKEN');
+    if (!config.owner) missing.push('GH_OWNER');
+    if (!config.repo) missing.push('GH_REPO');
 
     if (missing.length > 0) {
         console.error(`❌ Error: Missing required environment variables: ${missing.join(', ')}`);

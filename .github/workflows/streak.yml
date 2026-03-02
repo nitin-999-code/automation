@@ -33,6 +33,6 @@ jobs:
           # Note: If GitHub restricts naming custom secrets with the "GITHUB_" prefix,
           # you can rename the secret to "PAT_TOKEN" or similar and update it here:
           # GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-          GITHUB_OWNER: ${{ secrets.GITHUB_OWNER }}
-          GITHUB_REPO: ${{ secrets.GITHUB_REPO }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_OWNER: ${{ secrets.GH_OWNER }}
+          GH_REPO: ${{ secrets.GH_REPO }}
