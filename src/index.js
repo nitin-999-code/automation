@@ -42,7 +42,7 @@ function getGitHubClient() {
  * Generates the log entry with the current ISO timestamp.
  */
 function generateLogEntry() {
-    return `Daily auto streak update - ${new Date().toISOString()}\n`;
+    return `readme enhancement`;
 }
 
 /**
