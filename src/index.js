@@ -71,7 +71,7 @@ async function getExistingFile(client) {
 async function commitFile(client, existingFile, newContentRaw) {
     const url = `/repos/${config.owner}/${config.repo}/contents/${config.filePath}`;
     const dateStr = new Date().toISOString().split('T')[0];
-    const commitMessage = `Daily auto streak update - ${dateStr}`;
+    const commitMessage = `Readme Enhancement`;
 
     let finalContentRaw = newContentRaw;
     let sha = undefined;
